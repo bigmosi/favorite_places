@@ -15,7 +15,7 @@ class PlacesList extends StatelessWidget {
    return ListView.builder(
     itemCount: places.length,
     itemBuilder: (ctx, index) => ListTile(
-      title: Text(places[index].title, style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Theme.of(context).colorScheme.background),),
+      title: Text(places[index].title),
     ));
   }
 }

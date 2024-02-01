@@ -1,7 +1,9 @@
+import 'package:favorite_places/screens/add_place.dart';
+import 'package:favorite_places/widgets/places_list.dart';
 import 'package:flutter/material.dart';
 
-class PlacesListScreen extends StatelessWidget {
-  const PlacesListScreen({super.key});
+class PlacesScreen extends StatelessWidget {
+  const PlacesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,8 +11,11 @@ class PlacesListScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Your places'),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.add))
+          IconButton(onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (ctx) => const AddPlaceScreen()));
+          }, icon: const Icon(Icons.add))
         ]),
+        body: const PlacesList(places: [],),
     );
   }
 }
